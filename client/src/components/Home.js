@@ -31,7 +31,9 @@ function Home() {
           </div>
         ) : (
           posts.map((post) => {
-            return <Post key={uuid()} post={post} />;
+            if (!post.data.is_video) {
+              return <Post key={uuid()} post={post} />;
+            }
           })
         )}
         {}
